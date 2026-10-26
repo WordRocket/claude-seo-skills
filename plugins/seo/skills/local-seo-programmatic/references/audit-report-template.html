@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local SEO Audit Report — {{BUSINESS_NAME}}</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f11; color: #e8e8ec; min-height: 100vh; }
+  .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 48px 40px; border-bottom: 1px solid #2a2a3e; }
+  .header h1 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+  .header .subtitle { color: #8888aa; font-size: 15px; }
+  .header .meta { display: flex; gap: 24px; margin-top: 20px; }
+  .meta-item { }
+  .meta-item .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #666688; margin-bottom: 4px; }
+  .meta-item .value { font-size: 14px; color: #aaaacc; }
+
+  .score-hero { background: #16161e; border-bottom: 1px solid #2a2a3e; padding: 40px; display: flex; align-items: center; gap: 40px; }
+  .score-circle { width: 120px; height: 120px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 4px solid; flex-shrink: 0; }
+  .score-circle.excellent { border-color: #22c55e; background: rgba(34,197,94,0.08); }
+  .score-circle.moderate { border-color: #f59e0b; background: rgba(245,158,11,0.08); }
+  .score-circle.weak { border-color: #f97316; background: rgba(249,115,22,0.08); }
+  .score-circle.critical { border-color: #ef4444; background: rgba(239,68,68,0.08); }
+  .score-number { font-size: 38px; font-weight: 800; line-height: 1; }
+  .score-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888899; margin-top: 4px; }
+  .score-status { font-size: 22px; font-weight: 700; color: #fff; }
+  .score-desc { font-size: 14px; color: #8888aa; margin-top: 6px; max-width: 500px; line-height: 1.6; }
+
+  .categories { padding: 32px 40px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; background: #12121a; border-bottom: 1px solid #2a2a3e; }
+  .cat-card { background: #1a1a28; border: 1px solid #2a2a3e; border-radius: 12px; padding: 20px 16px; text-align: center; }
+  .cat-name { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #6666aa; margin-bottom: 10px; }
+  .cat-score { font-size: 28px; font-weight: 700; }
+  .cat-max { font-size: 12px; color: #555577; }
+  .cat-bar { height: 4px; background: #2a2a3e; border-radius: 2px; margin-top: 12px; }
+  .cat-bar-fill { height: 100%; border-radius: 2px; }
+  .good { color: #22c55e; } .good .cat-bar-fill { background: #22c55e; }
+  .ok { color: #f59e0b; } .ok .cat-bar-fill { background: #f59e0b; }
+  .bad { color: #ef4444; } .bad .cat-bar-fill { background: #ef4444; }
+
+  .section { padding: 32px 40px; border-bottom: 1px solid #1e1e2e; }
+  .section h2 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .section h2 .icon { font-size: 20px; }
+
+  .todo-list { display: flex; flex-direction: column; gap: 12px; }
+  .todo-item { background: #1a1a28; border: 1px solid #2a2a3e; border-radius: 10px; padding: 16px 20px; display: flex; gap: 16px; align-items: flex-start; }
+  .todo-rank { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; flex-shrink: 0; }
+  .rank-1 { background: rgba(239,68,68,0.2); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
+  .rank-2 { background: rgba(249,115,22,0.2); color: #f97316; border: 1px solid rgba(249,115,22,0.3); }
+  .rank-3 { background: rgba(245,158,11,0.2); color: #f59e0b; border: 1px solid rgba(245,158,11,0.3); }
+  .rank-4 { background: rgba(99,102,241,0.2); color: #818cf8; border: 1px solid rgba(99,102,241,0.3); }
+  .rank-5 { background: rgba(34,197,94,0.2); color: #22c55e; border: 1px solid rgba(34,197,94,0.3); }
+  .todo-content .title { font-size: 15px; font-weight: 600; color: #e8e8ec; margin-bottom: 4px; }
+  .todo-content .detail { font-size: 13px; color: #8888aa; line-height: 1.5; }
+  .badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-top: 8px; font-weight: 600; }
+  .badge-high { background: rgba(239,68,68,0.15); color: #ef4444; }
+  .badge-medium { background: rgba(245,158,11,0.15); color: #f59e0b; }
+  .badge-easy { background: rgba(34,197,94,0.15); color: #22c55e; }
+  .badge-hard { background: rgba(99,102,241,0.15); color: #818cf8; }
+
+  .quick-wins { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .quick-win { background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.15); border-radius: 10px; padding: 14px 16px; }
+  .quick-win .qw-title { font-size: 14px; font-weight: 600; color: #22c55e; margin-bottom: 4px; }
+  .quick-win .qw-detail { font-size: 13px; color: #8888aa; line-height: 1.5; }
+
+  .competitor-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .competitor-table th { text-align: left; padding: 10px 14px; color: #6666aa; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #2a2a3e; }
+  .competitor-table td { padding: 12px 14px; border-bottom: 1px solid #1e1e2e; vertical-align: top; }
+  .competitor-table tr:last-child td { border-bottom: none; }
+  .competitor-table td:first-child { color: #aaaacc; font-weight: 500; }
+  .url-chip { background: #1e1e2e; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-family: monospace; color: #8888cc; }
+
+  .location-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .location-table th { text-align: left; padding: 10px 14px; color: #6666aa; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #2a2a3e; background: #12121a; }
+  .location-table td { padding: 12px 14px; border-bottom: 1px solid #1e1e2e; vertical-align: top; }
+  .location-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .tier-1 { color: #818cf8; font-weight: 700; }
+  .tier-2 { color: #a78bfa; }
+  .tier-3 { color: #8888aa; }
+
+  .footer { padding: 24px 40px; background: #0a0a0f; text-align: center; color: #444466; font-size: 12px; }
+
+  @media (max-width: 900px) {
+    .categories { grid-template-columns: repeat(2, 1fr); }
+    .quick-wins { grid-template-columns: 1fr; }
+    .score-hero { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Local SEO Audit Report</h1>
+  <div class="subtitle">{{BUSINESS_NAME}} · {{BUSINESS_TYPE}} · {{PRIMARY_LOCATION}}</div>
+  <div class="meta">
+    <div class="meta-item"><div class="label">Website</div><div class="value">{{WEBSITE_URL}}</div></div>
+    <div class="meta-item"><div class="label">Audit Date</div><div class="value">{{AUDIT_DATE}}</div></div>
+    <div class="meta-item"><div class="label">Service Area</div><div class="value">{{SERVICE_AREA}}</div></div>
+  </div>
+</div>
+
+<div class="score-hero">
+  <div class="score-circle {{SCORE_CLASS}}">
+    <div class="score-number" style="color: inherit;">{{TOTAL_SCORE}}</div>
+    <div class="score-label">/ 100</div>
+  </div>
+  <div>
+    <div class="score-status">{{SCORE_STATUS}}</div>
+    <div class="score-desc">{{SCORE_DESCRIPTION}}</div>
+  </div>
+</div>
+
+<div class="categories">
+  <div class="cat-card {{ONPAGE_CLASS}}">
+    <div class="cat-name">On-Page</div>
+    <div class="cat-score">{{ONPAGE_SCORE}}</div>
+    <div class="cat-max">/ 20</div>
+    <div class="cat-bar"><div class="cat-bar-fill" style="width: {{ONPAGE_PCT}}%"></div></div>
+  </div>
+  <div class="cat-card {{STRUCTURE_CLASS}}">
+    <div class="cat-name">Site Structure</div>
+    <div class="cat-score">{{STRUCTURE_SCORE}}</div>
+    <div class="cat-max">/ 20</div>
+    <div class="cat-bar"><div class="cat-bar-fill" style="width: {{STRUCTURE_PCT}}%"></div></div>
+  </div>
+  <div class="cat-card {{GBP_CLASS}}">
+    <div class="cat-name">GBP</div>
+    <div class="cat-score">{{GBP_SCORE}}</div>
+    <div class="cat-max">/ 20</div>
+    <div class="cat-bar"><div class="cat-bar-fill" style="width: {{GBP_PCT}}%"></div></div>
+  </div>
+  <div class="cat-card {{CONTENT_CLASS}}">
+    <div class="cat-name">Content Depth</div>
+    <div class="cat-score">{{CONTENT_SCORE}}</div>
+    <div class="cat-max">/ 20</div>
+    <div class="cat-bar"><div class="cat-bar-fill" style="width: {{CONTENT_PCT}}%"></div></div>
+  </div>
+  <div class="cat-card {{TECH_CLASS}}">
+    <div class="cat-name">Technical</div>
+    <div class="cat-score">{{TECH_SCORE}}</div>
+    <div class="cat-max">/ 20</div>
+    <div class="cat-bar"><div class="cat-bar-fill" style="width: {{TECH_PCT}}%"></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2><span class="icon">🎯</span> Top 5 Priority Actions</h2>
+  <div class="todo-list">
+    {{TODO_ITEMS}}
+    <!-- Template for each todo:
+    <div class="todo-item">
+      <div class="todo-rank rank-1">1</div>
+      <div class="todo-content">
+        <div class="title">Build dedicated city landing pages</div>
+        <div class="detail">Currently no location-specific pages exist. Top competitors have 15–30 city pages targeting [City A], [City B], etc. This is the single biggest gap.</div>
+        <span class="badge badge-high">High Impact</span>
+        <span class="badge badge-medium">Medium Effort</span>
+      </div>
+    </div>
+    -->
+  </div>
+</div>
+
+<div class="section">
+  <h2><span class="icon">⚡</span> Quick Wins (Do These This Week)</h2>
+  <div class="quick-wins">
+    {{QUICK_WIN_ITEMS}}
+    <!-- Template:
+    <div class="quick-win">
+      <div class="qw-title">Add city to homepage title tag</div>
+      <div class="qw-detail">Current title: "Expert Plumbing Services". Change to "Expert Plumbing Services in Dallas, TX | [Business Name]". 30-minute fix.</div>
+    </div>
+    -->
+  </div>
+</div>
+
+<div class="section">
+  <h2><span class="icon">🔍</span> Competitor Gap Analysis</h2>
+  <table class="competitor-table">
+    <thead>
+      <tr>
+        <th>Competitor</th>
+        <th>Local Pages</th>
+        <th>What They're Doing Right</th>
+        <th>Their Weakness (Your Opportunity)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{COMPETITOR_ROWS}}
+      <!-- Template:
+      <tr>
+        <td><a href="#" style="color:#818cf8;">competitor.com</a></td>
+        <td>23 city pages</td>
+        <td>Strong URL structure, local FAQ on every page</td>
+        <td>Thin content (avg ~400 words), no testimonials</td>
+      </tr>
+      -->
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2><span class="icon">📍</span> Recommended Local Pages to Build</h2>
+  <p style="color:#8888aa; font-size:13px; margin-bottom:16px;">Prioritized by search demand and competitive opportunity. Based on competitor analysis and Google Trends data.</p>
+  <table class="location-table">
+    <thead>
+      <tr>
+        <th>Tier</th>
+        <th>Location</th>
+        <th>Target URL</th>
+        <th>Primary Keyword</th>
+        <th>Est. Monthly Searches</th>
+        <th>Competition</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{LOCATION_ROWS}}
+      <!-- Template:
+      <tr>
+        <td><span class="tier-1">Tier 1</span></td>
+        <td>Dallas, TX</td>
+        <td><span class="url-chip">/hvac-repair-dallas/</span></td>
+        <td>hvac repair dallas tx</td>
+        <td>880/mo</td>
+        <td>Medium</td>
+      </tr>
+      -->
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  Generated by Local SEO Programmatic Pipeline · {{AUDIT_DATE}}
+</div>
+
+</body>
+</html>

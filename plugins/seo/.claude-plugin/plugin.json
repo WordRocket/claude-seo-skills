@@ -1,0 +1,9 @@
+{
+  "name": "seo",
+  "description": "9 SEO skills for Claude: full SEO audit, local SEO pages, AI Overviews / AI Mode visibility, backlinks, unlinked brand mentions, core update recovery, image & video search, and keyword-to-published-article with WordRocket.",
+  "version": "1.0.0",
+  "author": { "name": "WordRocket", "url": "https://wordrocket.ai" },
+  "homepage": "https://wordrocket.ai",
+  "license": "MIT",
+  "keywords": ["seo", "local-seo", "geo", "ai-overviews", "backlinks", "wordpress", "wordrocket"]
+}
