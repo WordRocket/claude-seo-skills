@@ -1,4 +1,4 @@
-# 10 free SEO skills for Claude
+# 11 free SEO skills for Claude
 
 Turn Claude into your SEO team. Each skill does the actual work with real data from the web (search results, your
 Search Console, Google Maps, free backlink tools) and gives you a client-ready report you can act on today.
@@ -16,6 +16,7 @@ Free, open source (MIT). Made by [WordRocket](https://wordrocket.ai).
 | **core-update-recovery** | "My traffic dropped after the Google update" | the drop matched to Google's update dates + a recovery plan |
 | **visual-search-opportunities** | "I get image impressions but no clicks" | the image + video searches you can win, with briefs |
 | **borrowed-authority** | "Get me on page 1 this week without touching my website" | the searches where Reddit, LinkedIn and YouTube already rank or get cited by AI, the platform-native posts to put there, and a 30-day rank + AI-citation tracker |
+| **youtube-thumbnails** | "Design the thumbnail for my video: *[title]*" | Claude studies the top thumbnails in your niche in Chrome, writes the research, turns your title into prompts and makes the thumbnail with GPT Image 2 via kie.ai (your key) |
 | **serp-to-published-article** | "Write and publish an article for *best crm for roofers*" | top-5 SERP teardown → brief → article written and published to WordPress (needs WordRocket) |
 
 ## Install

@@ -1,7 +1,7 @@
 {
   "name": "seo",
-  "description": "10 SEO skills for Claude: full SEO audit, local SEO pages, AI Overviews / AI Mode visibility, ranking on Reddit, LinkedIn and YouTube (borrowed authority), backlinks, unlinked brand mentions, core update recovery, image & video search, and keyword-to-published-article with WordRocket.",
-  "version": "1.1.0",
+  "description": "11 SEO skills for Claude: full SEO audit, local SEO pages, AI Overviews / AI Mode visibility, ranking on Reddit, LinkedIn and YouTube (borrowed authority), backlinks, unlinked brand mentions, core update recovery, image & video search, YouTube thumbnails (research + GPT Image 2 via kie.ai), and keyword-to-published-article with WordRocket.",
+  "version": "1.2.0",
   "author": { "name": "WordRocket", "url": "https://wordrocket.ai" },
   "homepage": "https://wordrocket.ai",
   "license": "MIT",
