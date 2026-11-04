@@ -1,4 +1,4 @@
-# 11 free SEO skills for Claude
+# 12 free SEO skills for Claude
 
 Turn Claude into your SEO team. Each skill does the actual work with real data from the web (search results, your
 Search Console, Google Maps, free backlink tools) and gives you a client-ready report you can act on today.
@@ -7,6 +7,7 @@ Free, open source (MIT). Made by [WordRocket](https://wordrocket.ai).
 
 | skill | ask Claude something like | you get |
 |---|---|---|
+| **backlink-maxing** | "Run the SEO backlink maxing playbook for *[my site]*" | the whole white-hat link job in one prompt: unlinked mentions → links, guest posts + resource pages + listicles, cited on Reddit/LinkedIn/YouTube, link-worthy articles (with WordRocket), every outreach draft |
 | **ultimate-seo** | "Do SEO for my plumbing business in Austin" | 14 workflows: Google Business Profile audit, reviews, keyword gaps, money pages, on-page, technical, schema, page speed |
 | **seo-audit** | "Audit example.com and its competitors" | a full HTML audit: competitors, keywords, on-page + technical issues, 30/60/90-day plan |
 | **local-seo-programmatic** | "I want to rank in every town around Dallas" | a scored local audit + the city pages to build, with a brief for each one |
@@ -18,6 +19,9 @@ Free, open source (MIT). Made by [WordRocket](https://wordrocket.ai).
 | **borrowed-authority** | "Get me on page 1 this week without touching my website" | the searches where Reddit, LinkedIn and YouTube already rank or get cited by AI, the platform-native posts to put there, and a 30-day rank + AI-citation tracker |
 | **youtube-thumbnails** | "Design the thumbnail for my video: *[title]*" | Claude studies the top thumbnails in your niche in Chrome, writes the research, turns your title into prompts and makes the thumbnail with GPT Image 2 via kie.ai (your key) |
 | **serp-to-published-article** | "Write and publish an article for *best crm for roofers*" | top-5 SERP teardown → brief → article written and published to WordPress (needs WordRocket) |
+
+## Free playbook
+[**50 backlink tactics, ranked S tier to C tier**](playbooks/50-backlink-tactics.md) ([PDF](playbooks/50-backlink-tactics.pdf)): what to run first, with the Claude prompt for each.
 
 ## Install
 

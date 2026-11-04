@@ -1,12 +1,12 @@
 {
   "name": "claude-seo-skills",
   "owner": { "name": "WordRocket", "url": "https://wordrocket.ai" },
-  "metadata": { "description": "Free SEO skills for Claude, by WordRocket", "version": "1.2.0" },
+  "metadata": { "description": "Free SEO skills for Claude, by WordRocket", "version": "1.3.0" },
   "plugins": [
     {
       "name": "seo",
       "source": "./plugins/seo",
-      "description": "11 SEO skills: audits, local pages, AI search visibility, rank on Reddit/LinkedIn/YouTube, backlinks, recovery plans, publish with WordRocket"
+      "description": "12 SEO skills: the backlink maxing playbook, audits, local pages, AI search visibility, rank on Reddit/LinkedIn/YouTube, backlinks, recovery plans, publish with WordRocket"
     }
   ]
 }
