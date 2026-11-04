@@ -103,8 +103,9 @@ Before writing HTML, compile your research into structured notes. Mentally organ
 Run the chart generation script BEFORE writing the HTML. This creates all charts as base64-encoded PNG strings that you'll embed in the HTML.
 
 ```bash
-# [skill_dir] = the folder this SKILL.md is in (needs Python 3 + matplotlib + numpy: pip install matplotlib numpy)
-python [skill_dir]/scripts/generate_charts.py \
+# ${CLAUDE_SKILL_DIR} = this skill's folder (Claude Code fills it in; on Claude.ai, run it from this skill's folder).
+# Needs Python 3 + matplotlib + numpy: pip install matplotlib numpy
+python ${CLAUDE_SKILL_DIR}/scripts/generate_charts.py \
   --output seo-audit-charts.json \
   --site-name "TARGET SITE NAME" \
   --competitors "Competitor1,Competitor2,Competitor3,Competitor4" \

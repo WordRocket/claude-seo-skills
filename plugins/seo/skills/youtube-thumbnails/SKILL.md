@@ -51,7 +51,7 @@ Never copy another creator's thumbnail, logo, face or artwork. Brand logos only 
 ## Step 4: Generate (kie.ai · GPT Image 2)
 In Claude Code, with `KIE_API_KEY` set:
 ```
-python3 [skill_dir]/scripts/kie_generate.py --prompt-file thumbnails/prompt-1.txt --out thumbnails/thumb-1.png --resolution 2K
+python3 ${CLAUDE_SKILL_DIR}/scripts/kie_generate.py --prompt-file thumbnails/prompt-1.txt --out thumbnails/thumb-1.png --resolution 2K
 ```
 (add `--image <url>` for image-to-image with the creator's photo). It creates the task, polls until it's done and
 downloads the image. kie.ai's listed price for GPT Image 2 is about $0.03 (1K) to $0.08 (4K) per image (check

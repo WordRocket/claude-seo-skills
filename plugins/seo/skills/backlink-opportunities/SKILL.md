@@ -239,12 +239,12 @@ Compile everything into a `backlink_findings.json` file in the outputs directory
 ### Step 5.2 — Run the report generator
 
 ```bash
-python [skill_dir]/scripts/generate_report.py \
+python ${CLAUDE_SKILL_DIR}/scripts/generate_report.py \
   --input backlink_findings.json \
   --output backlink_report.html
 ```
 
-Replace `[skill_dir]` with the actual path to the skill directory.
+`${CLAUDE_SKILL_DIR}` = this skill's folder (Claude Code fills it in; on Claude.ai, run it from this skill's folder).
 
 ### Step 5.3 — Present to the user
 

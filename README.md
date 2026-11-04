@@ -34,7 +34,7 @@ Then just ask, or call one directly: `/seo:seo-audit`, `/seo:local-seo-programma
 
 ### Claude.ai / Claude Desktop
 1. Download the skills you want from [`dist/`](dist/) (one zip per skill).
-2. In Claude: **Customize › Skills › + › Upload a skill** and pick the zip. (Older layouts: Settings › Capabilities › Skills.)
+2. In Claude: **Customize › Skills › + Create skill › Upload a skill** and pick the zip. (Older layouts: Settings › Capabilities › Skills.)
 3. Make sure **Code execution and file creation** is on (Settings › Capabilities). The reports are built as files.
 
 ### Works best with
