@@ -20,7 +20,9 @@ Free, open source (MIT). Made by [WordRocket](https://wordrocket.ai).
 | **youtube-thumbnails** | "Design the thumbnail for my video: *[title]*" | Claude studies the top thumbnails in your niche in Chrome, writes the research, turns your title into prompts and makes the thumbnail with GPT Image 2 via kie.ai (your key) |
 | **serp-to-published-article** | "Write and publish an article for *best crm for roofers*" | top-5 SERP teardown → brief → article written and published to WordPress (needs WordRocket) |
 
-## Free playbook
+## Free playbooks
+[**The 10-minute AI ranking setup**](playbooks/rank-in-ai-10-minutes.md): Google's Preferred Sources button (the two lines of code), letting the AI crawlers in, and owning the exact question your buyer asks.
+
 [**50 backlink tactics, ranked S tier to C tier**](playbooks/50-backlink-tactics.md) ([PDF](playbooks/50-backlink-tactics.pdf)): what to run first, with the Claude prompt for each.
 
 ## Install
