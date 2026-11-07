@@ -25,7 +25,17 @@ Free, open source (MIT). Made by [WordRocket](https://wordrocket.ai).
 ## Free playbooks
 [**The AI humanizer prompt**](playbooks/ai-humanizer-prompt.md) ✨ new: copy-paste it into ChatGPT (Settings › Personalization › Custom instructions) or Claude (Settings › Your Claude › Instructions). Full version + a short one for ChatGPT Free, every rule sourced.
 
-[**The 10-minute AI ranking setup**](playbooks/rank-in-ai-10-minutes.md): Google's Preferred Sources button (the two lines of code), letting the AI crawlers in, and owning the exact question your buyer asks.
+[**The 10-minute AI ranking setup**](playbooks/rank-in-ai-10-minutes.md) ([PDF](playbooks/rank-in-ai-10-minutes.pdf)): letting the AI search crawlers in, owning the exact question your buyer asks, and Google's Preferred Sources button (the two lines of code).
+
+[**The AI search visibility checklist**](playbooks/ai-search-visibility-checklist.md) ([PDF](playbooks/ai-search-visibility-checklist.pdf)) ✨ new: 20 checks for ChatGPT, Perplexity, Claude, Copilot and Google's AI Overviews / AI Mode, each with the official source.
+
+[**Page-2 quick wins**](playbooks/page-2-quick-wins.md) ([PDF](playbooks/page-2-quick-wins.pdf)) ✨ new: find the pages Google almost ranks in Search Console, the fixes that move them up, and a Claude prompt for your export.
+
+[**Ranking principles cheat sheet**](playbooks/ranking-principles-cheat-sheet.md) ([PDF](playbooks/ranking-principles-cheat-sheet.pdf)) ✨ new: the 12 principles Google and AI answers judge pages by, on one page, plus the habits Google says don't help.
+
+[**The 30-day SEO plan**](playbooks/30-day-seo-plan.md) ([PDF](playbooks/30-day-seo-plan.pdf)) ✨ new: one task a day for a month, from page-2 fixes to AI answers to links, and what to measure.
+
+[**The SEO tracker**](playbooks/seo-tracker.xlsx) (Excel / Google Sheets) ✨ new: page-2 shortlist with automatic check dates, an AI answers log and the 30-day plan.
 
 [**50 backlink tactics, ranked S tier to C tier**](playbooks/50-backlink-tactics.md) ([PDF](playbooks/50-backlink-tactics.pdf)): what to run first, with the Claude prompt for each.
 

@@ -1,0 +1,55 @@
+<!doctype html><html><head><meta charset="utf-8"><title>The 10-minute AI ranking setup</title><style>body{margin:0;background:#fff;font-family:Inter,-apple-system,Helvetica,Arial,sans-serif;color:#1d1d1f}
+.page{max-width:760px;margin:0 auto;padding:44px 40px}
+h1{font-size:32px;line-height:1.15;margin:0 0 12px;letter-spacing:-0.5px}
+h2{font-size:20px;margin:30px 0 10px}
+h3{font-size:16px;margin:22px 0 8px}
+p,li{font-size:14.5px;line-height:1.55;color:#333}
+ul,ol{padding-left:24px;margin:6px 0 12px}li{margin:0 0 6px}
+blockquote{margin:12px 0;padding:10px 14px;background:#f4f7ff;border-left:4px solid #3b82f6;border-radius:6px}
+blockquote p{margin:0;color:#1d1d1f}
+table{border-collapse:collapse;width:100%;margin:10px 0 14px;font-size:13px}
+th,td{border:1px solid #e3e3e3;padding:7px 8px;text-align:left;vertical-align:top;color:#333}
+th{background:#f6f6f7;font-weight:700;color:#1d1d1f}
+td:empty::after{content:"\00a0";display:inline-block;height:18px}
+code{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;background:#eef8f4;color:#0b6b52;border-radius:4px;padding:1px 5px}
+a{color:#2563eb;text-decoration:none}
+pre{background:#f4f4f5;border-radius:6px;padding:10px 12px;font-size:12px;line-height:1.45;white-space:pre-wrap;margin:8px 0 14px}
+pre code{background:none;color:#1d1d1f;padding:0}
+hr{border:none;border-top:1px solid #e5e5e5;margin:26px 0}
+.foot p{font-size:12px;color:#777}
+@page{size:Letter;margin:14mm}
+@media print{.page{padding:4px 34px}h2{margin:22px 0 8px}hr{margin:18px 0}}</style></head><body><div class="page"><h1>The 10-minute AI ranking setup</h1>
+<p>Three steps to help Google's AI answers and ChatGPT find you, show you and pick you. Each takes a few minutes. Nothing here guarantees a ranking: AI answers change by person and by day. These are the switches most sites have never flipped. (Checked November 7, 2026; links go to the official docs.)</p>
+<h2>Step 1: Let the AI search crawlers in (3 minutes)</h2>
+<p>AI search can only show what its crawler is allowed to read. OpenAI says it plainly:</p>
+<blockquote><p style="margin:0 0 8px">"Sites that are opted out of OAI-SearchBot will not be shown in ChatGPT search answers." (<a href="https://developers.openai.com/api/docs/bots">OpenAI: crawlers</a>)</p></blockquote>
+<p><b>Check yours:</b> open <code>yourdomain.com/robots.txt</code>. A <code>Disallow: /</code> under any of these hides you from that AI search:</p>
+<pre><code>User-agent: OAI-SearchBot
+User-agent: PerplexityBot
+User-agent: Claude-SearchBot
+User-agent: Googlebot
+User-agent: Bingbot
+Allow: /</code></pre>
+<p>What each name controls:</p>
+<ul><li><code>OAI-SearchBot</code> = ChatGPT search. <code>GPTBot</code> = OpenAI model training: allowing or blocking it is your call and is separate from search.</li><li><code>PerplexityBot</code> = Perplexity's answers. <code>Claude-SearchBot</code> = Claude's search; <code>ClaudeBot</code> is training only.</li><li><code>Google-Extended</code> only controls Gemini training and grounding. Blocking it does <b>not</b> remove you from Google Search or AI Overviews, which use Googlebot.</li><li><code>Bingbot</code> feeds Bing, and Microsoft Copilot grounds its answers with Bing searches.</li></ul>
+<p><b>On Cloudflare?</b> Open AI Crawl Control and keep <b>Search</b> on Allow. Don't want AI training? Pick "Disallow AI Training", never "Block": Block also stops Googlebot, Bingbot and Applebot. (<a href="https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers">Cloudflare, Sep 15, 2026</a>) Changes can take about a day to be picked up.</p>
+<h2>Step 2: Own the exact question (4 minutes)</h2>
+<p>Broad questions are crowded. Specific ones are winnable.</p>
+<p>Our own test (ChatGPT, November 4, 2026):</p>
+<ul><li><b>Broad:</b> "best AI tool that writes SEO blog posts and publishes them to WordPress automatically" → WordRocket #2.</li><li><b>Specific:</b> "best AI blog writer where I can use my own OpenRouter API key and auto publish SEO articles to WordPress" → WordRocket <b>#1</b>.</li></ul>
+<p>Do this:</p>
+<ol><li>Write down the exact sentence your best customer would type, with the detail that makes you different (the city, the feature, the price point, the "with my own API key").</li><li>Ask ChatGPT, Perplexity and Google AI Mode that sentence. Note who shows up and <b>why</b> the answer says they're good.</li><li>Make sure one page on your site answers that exact question in its first two sentences, in plain words, with the facts the AI quoted about your competitors (features, prices, who it's for).</li><li>Ask again in a week. Keep a log: date, question, tool, your position (the free SEO tracker has a sheet for it).</li></ol>
+<h2>Step 3: Google's Preferred Sources button (3 minutes)</h2>
+<p><b>What it does.</b> Readers can tap a button on your site to add you as a <i>preferred source</i> in Google. Since May 27, 2026, those readers see your links labeled <b>"Preferred"</b> when you appear in AI Mode and AI Overviews, and your content is more likely to appear in their Top Stories. Google says people are twice as likely to click through to a Preferred Source. (<a href="https://blog.google/products-and-platforms/products/search/original-high-quality-content-search/">Google blog</a> · <a href="https://developers.google.com/search/docs/appearance/preferred-sources">Search Central doc</a>)</p>
+<p><b>Who qualifies.</b> Sites that publish fresh content, at domain level (example.com) or subdomain level (blog.example.com). A folder such as example.com/blog doesn't. For the AI label, Search Console › Settings › Search generative AI must be set to Include (the default).</p>
+<p><b>Add it.</b> Two lines of code. First, in the <code>&lt;head&gt;</code> of your pages:</p>
+<pre><code>&lt;script async src=&quot;https://news.google.com/swg/js/v1/publisher.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p>Then where you want the button (footer, sidebar, end of each post):</p>
+<pre><code>&lt;div google-add-preferred-source-btn&gt;&lt;/div&gt;</code></pre>
+<p><b>No code access?</b> Use a plain link in a newsletter, your bio or a button image: <code>https://www.google.com/preferences/source?q=yourdomain.com</code></p>
+<p><b>WordPress:</b> paste the first line with a header/footer plugin (e.g. WPCode › Header &amp; Footer), and the second in a Custom HTML block in your footer widget.</p>
+<p><b>Then ask for it.</b> The button only helps when people tap it: mention it in your newsletter, at the end of posts and to your regular readers and customers.</p>
+<h2>What you don't need</h2>
+<ul><li><b>An llms.txt file for Google.</b> Google says it won't help or hurt you in Google Search.</li><li><b>Special "AI schema" or a second AI version of your pages.</b> Google: "There are no additional requirements to appear in AI Overviews or AI Mode." (<a href="https://developers.google.com/search/docs/appearance/ai-features">AI features and your website</a>)</li></ul>
+<hr><div class="foot">
+<p>More checks: the free <b>AI search visibility checklist</b> (20 checks with sources). Free skills <b>generative-ai-search</b> (your AI Overview / AI Mode data from Search Console + the articles to write next) and <b>borrowed-authority</b> (the questions where Reddit, LinkedIn and YouTube already rank or get cited): <a href="https://github.com/WordRocket/claude-seo-skills">github.com/WordRocket/claude-seo-skills</a> · Made by WordRocket, our own tool. Results vary.</p></div></div></body></html>

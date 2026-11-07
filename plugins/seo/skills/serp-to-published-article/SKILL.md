@@ -29,7 +29,7 @@ If the user has not already provided the following, ask for them all at once in 
 - **SITE URL** — their website (e.g. https://yoursite.com)
 - **AUDIENCE** — who the article is for (1–2 sentences)
 - **TONE** — professional / casual / friendly / formal
-- **WORD COUNT** — target (recommend 3000–3500 for competitive keywords)
+- **WORD COUNT** — target. Set it from what the reader needs and what the top 5 actually cover; Google has no preferred word count (default 2,000 if unsure)
 - **TAGS** — comma-separated list of tags for the WordPress post
 
 Once you have all values, confirm them back in a single summary line and proceed immediately to Step 1.
@@ -44,7 +44,7 @@ For each of the top 5 articles, fetch and read the full page. Extract:
 
 - Full H1 title and its structural pattern
 - All H2 and H3 headings (the complete outline)
-- Primary keyword and secondary/LSI keywords visible in title, headings, and body
+- Primary keyword and secondary keywords / related terms visible in title, headings, and body
 - Approximate word count and reading level
 - Tone (technical, conversational, plain English, etc.)
 - Data tables, statistics, comparison elements, or unique content assets
@@ -63,7 +63,7 @@ Synthesise across all 5 articles and produce:
 What structures do ranking titles use? (e.g. `[Keyword]: [Year] Guide`, `How to [Action]`, `[Number] Ways to...`) Which pattern is most common at the top?
 
 **MUST-INCLUDE KEYWORDS**
-Secondary and LSI keywords appearing in 3+ of the top 5. These are non-negotiable inclusions.
+Secondary keywords and related terms appearing in 3+ of the top 5. Cover each one where it helps the reader; never repeat a term to hit a count (keyword stuffing is against Google's spam policies).
 
 **TABLE-STAKES OUTLINE SECTIONS**
 H2/H3 topics that appear in the majority of articles — every competing article covers these, so must you.
@@ -92,7 +92,10 @@ SECONDARY KEYWORDS (8–12):
 [list them]
 
 OPTIMAL OUTLINE:
-[full H2/H3 structure — minimum 8 H2s — covering table-stakes topics AND content gaps]
+[full H2/H3 structure, as many H2s as the topic needs (usually 6–10), covering table-stakes topics AND content gaps]
+
+OPENING:
+[the answer to the main question in 2–3 plain sentences: this goes first, before any background]
 
 TONE & STYLE GUIDANCE:
 [2–3 sentences: reading level, analogies, what to avoid, how to sound authoritative without being dry]

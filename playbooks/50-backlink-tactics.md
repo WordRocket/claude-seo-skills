@@ -64,7 +64,7 @@ Results vary: your niche, site and follow-up decide yours.
 
 ## Skip these (they can get you penalized)
 Buying links that pass ranking value, private blog networks, automated link schemes, mass-uploading pages, decks or PDFs to
-big sites to borrow their ranking (Google's scaled content and site reputation abuse rules), fake reviews, comment spam.
+big sites to borrow their ranking (Google's scaled content abuse and site reputation policies), fake reviews, comment spam.
 
 ---
 Free skills: github.com/WordRocket/claude-seo-skills · Write the link-worthy articles with WordRocket (wordrocket.ai), our own

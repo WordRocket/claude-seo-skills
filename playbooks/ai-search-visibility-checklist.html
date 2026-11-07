@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8"><title>The AI search visibility checklist</title><style>body{margin:0;background:#fff;font-family:Inter,-apple-system,Helvetica,Arial,sans-serif;color:#1d1d1f}
+.page{max-width:760px;margin:0 auto;padding:44px 40px}
+h1{font-size:32px;line-height:1.15;margin:0 0 12px;letter-spacing:-0.5px}
+h2{font-size:20px;margin:30px 0 10px}
+h3{font-size:16px;margin:22px 0 8px}
+p,li{font-size:14.5px;line-height:1.55;color:#333}
+ul,ol{padding-left:24px;margin:6px 0 12px}li{margin:0 0 6px}
+blockquote{margin:12px 0;padding:10px 14px;background:#f4f7ff;border-left:4px solid #3b82f6;border-radius:6px}
+blockquote p{margin:0;color:#1d1d1f}
+table{border-collapse:collapse;width:100%;margin:10px 0 14px;font-size:13px}
+th,td{border:1px solid #e3e3e3;padding:7px 8px;text-align:left;vertical-align:top;color:#333}
+th{background:#f6f6f7;font-weight:700;color:#1d1d1f}
+td:empty::after{content:"\00a0";display:inline-block;height:18px}
+code{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;background:#eef8f4;color:#0b6b52;border-radius:4px;padding:1px 5px}
+a{color:#2563eb;text-decoration:none}
+pre{background:#f4f4f5;border-radius:6px;padding:10px 12px;font-size:12px;line-height:1.45;white-space:pre-wrap;margin:8px 0 14px}
+pre code{background:none;color:#1d1d1f;padding:0}
+hr{border:none;border-top:1px solid #e5e5e5;margin:26px 0}
+.foot p{font-size:12px;color:#777}
+@page{size:Letter;margin:14mm}
+@media print{.page{padding:4px 34px}h2{margin:22px 0 8px}hr{margin:18px 0}}</style></head><body><div class="page"><h1>The AI search visibility checklist</h1>
+<p>20 checks so ChatGPT, Perplexity, Claude, Copilot and Google's AI Overviews and AI Mode can find your pages, show them and quote them. Every line links to the official doc or the study behind it. Checked November 7, 2026. Nothing here guarantees a mention: AI answers change by person and by day. These are the switches most sites never check.</p>
+<h2>Google AI Overviews and AI Mode</h2>
+<ol><li><b>Key pages indexed and allowed a snippet.</b> That's Google's only requirement: "There are no additional requirements to appear in AI Overviews or AI Mode." Check with URL Inspection. (<a href="https://developers.google.com/search/docs/appearance/ai-features">AI features</a>)</li><li><b>Search Console › Settings › Search generative AI says "Include"</b> (the default). (<a href="https://support.google.com/webmasters/answer/16908024">help</a>)</li><li><b>Open the Generative AI performance report</b> in Search Console to see how often AI Overviews and AI Mode showed your links (live for all sites since Aug 31, 2026). (<a href="https://support.google.com/webmasters/answer/16984139">help</a>)</li><li><b>No nosnippet or tiny max-snippet</b> on pages you want quoted: they limit AI features too. (<a href="https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag">robots meta tag</a>)</li><li><b>Know what Google-Extended does:</b> blocking it only stops Gemini training and grounding. It doesn't remove you from Google Search or AI Overviews. (<a href="https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers">Google crawlers</a>)</li><li><b>Skip llms.txt for Google.</b> Google says it won't help or hurt you there. Make one only if another tool asks. (<a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide#mythbusting">AI optimization guide</a>)</li><li><b>Add the "Add as preferred source" button</b> (domain or subdomain sites that publish fresh content). Readers who tap it see your links labeled "Preferred" in AI Mode and AI Overviews; Google says people are twice as likely to click a Preferred Source. (<a href="https://developers.google.com/search/docs/appearance/preferred-sources">preferred sources</a>)</li></ol>
+<h2>ChatGPT, Perplexity and Claude</h2>
+<ol start="8"><li><b>Allow OAI-SearchBot</b> in robots.txt. OpenAI: sites opted out "will not be shown in ChatGPT search answers". Changes take about a day. (<a href="https://developers.openai.com/api/docs/bots">OpenAI crawlers</a>)</li><li><b>Decide on GPTBot separately.</b> Blocking it only opts you out of OpenAI model training, not ChatGPT search.</li><li><b>Allow PerplexityBot:</b> it's what surfaces and links sites in Perplexity answers. (<a href="https://docs.perplexity.ai/guides/bots">Perplexity crawlers</a>)</li><li><b>Allow Claude-SearchBot and Claude-User.</b> ClaudeBot is training only. (<a href="https://support.claude.com/en/articles/8896518">Anthropic crawlers</a>)</li></ol>
+<h2>Microsoft Copilot and Bing</h2>
+<ol start="12"><li><b>Verify the site in Bing Webmaster Tools</b> and open its AI Performance report. Copilot grounds its answers with Bing searches. (<a href="https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview">Bing blog, Feb 2026</a>)</li><li><b>Turn on IndexNow</b> so Bing and other engines hear about new or updated pages right away (Google isn't part of it). (<a href="https://www.indexnow.org/faq">indexnow.org</a>)</li><li><b>Local business? Claim Bing Places for Business</b> as well as your Google Business Profile. (<a href="https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview">Bing</a>)</li></ol>
+<h2>Your host and firewall</h2>
+<ol start="15"><li><b>Check Cloudflare (or your host's bot settings).</b> In AI Crawl Control, keep <b>Search</b> on Allow. Don't want AI training? Pick "Disallow AI Training", never "Block": Block also stops Googlebot, Bingbot and Applebot. (<a href="https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers">Cloudflare, Sep 15, 2026</a>)</li></ol>
+<h2>The page itself</h2>
+<ol start="16"><li><b>Key facts in plain text:</b> services, prices, hours, areas. Not only inside images or video.</li><li><b>Answer first, then the follow-up questions.</b> Only about 38% of AI Overview citations also rank in Google's top 10 for the same search, because AI pulls from related searches too. (<a href="https://ahrefs.com/blog/ai-overview-citations-top-10/">Ahrefs, Mar 2026</a>)</li><li><b>Add sources, short real quotes and real numbers.</b> In the GEO study (KDD 2024) they lifted visibility in AI answers by up to 40%; keyword stuffing didn't help. (<a href="https://arxiv.org/abs/2311.09735">arxiv.org/abs/2311.09735</a>)</li><li><b>Normal structured data that matches the visible text.</b> No special "AI schema" is needed. (<a href="https://developers.google.com/search/docs/appearance/ai-features">AI features</a>)</li><li><b>Get mentioned off your site</b> (YouTube, Reddit, lists in your niche). In Ahrefs' study of 75,000 brands, mentions tracked AI visibility far more closely than backlinks (correlation, not proof). (<a href="https://ahrefs.com/blog/ai-brand-visibility-correlations/">Ahrefs</a>)</li></ol>
+<h2>Copy-paste robots.txt (allow AI search, your call on training)</h2>
+<p>Check what's in your file first: a <code>Disallow: /</code> under any of these hides you from that search.</p>
+<pre><code>User-agent: OAI-SearchBot
+User-agent: PerplexityBot
+User-agent: Claude-SearchBot
+User-agent: Googlebot
+User-agent: Bingbot
+Allow: /</code></pre>
+<hr><div class="foot">
+<p>Free skills: <b>generative-ai-search</b> (your AI Overview and AI Mode data, and what to write next) and <b>borrowed-authority</b> at <a href="https://github.com/WordRocket/claude-seo-skills">github.com/WordRocket/claude-seo-skills</a> · Made by WordRocket (wordrocket.ai), our own tool. Results vary.</p></div></div></body></html>
