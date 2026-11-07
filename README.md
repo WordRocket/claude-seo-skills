@@ -1,4 +1,4 @@
-# 12 free SEO skills for Claude
+# 14 free SEO skills for Claude
 
 Turn Claude into your SEO team. Each skill does the actual work with real data from the web (search results, your
 Search Console, Google Maps, free backlink tools) and gives you a client-ready report you can act on today.
@@ -7,6 +7,8 @@ Free, open source (MIT). Made by [WordRocket](https://wordrocket.ai).
 
 | skill | ask Claude something like | you get |
 |---|---|---|
+| **ranking-principles** ✨ new | "Use ranking principles to write a page about *[topic]*" · "Audit this page with ranking principles" | Claude stops copying SEO checklists and thinks like Google's own guidance: 12 principles (answer first, add what the top results don't have, first-hand proof, cite sources…) to write, brief or audit any page, with sources |
+| **ai-humanizer** ✨ new | "Learn my voice from these 3 emails" · "Humanize this" | your voice profile, drafts rewritten without the 2026 AI tells ("this matters", "rather than simply", reflex lists of three…), and a paste-ready prompt for ChatGPT custom instructions or Claude Instructions |
 | **backlink-maxing** | "Run the SEO backlink maxing playbook for *[my site]*" | the whole white-hat link job in one prompt: unlinked mentions → links, guest posts + resource pages + listicles, cited on Reddit/LinkedIn/YouTube, link-worthy articles (with WordRocket), every outreach draft |
 | **ultimate-seo** | "Do SEO for my plumbing business in Austin" | 14 workflows: Google Business Profile audit, reviews, keyword gaps, money pages, on-page, technical, schema, page speed |
 | **seo-audit** | "Audit example.com and its competitors" | a full HTML audit: competitors, keywords, on-page + technical issues, 30/60/90-day plan |
@@ -21,6 +23,8 @@ Free, open source (MIT). Made by [WordRocket](https://wordrocket.ai).
 | **serp-to-published-article** | "Write and publish an article for *best crm for roofers*" | top-5 SERP teardown → brief → article written and published to WordPress (needs WordRocket) |
 
 ## Free playbooks
+[**The AI humanizer prompt**](playbooks/ai-humanizer-prompt.md) ✨ new: copy-paste it into ChatGPT (Settings › Personalization › Custom instructions) or Claude (Settings › Your Claude › Instructions). Full version + a short one for ChatGPT Free, every rule sourced.
+
 [**The 10-minute AI ranking setup**](playbooks/rank-in-ai-10-minutes.md): Google's Preferred Sources button (the two lines of code), letting the AI crawlers in, and owning the exact question your buyer asks.
 
 [**50 backlink tactics, ranked S tier to C tier**](playbooks/50-backlink-tactics.md) ([PDF](playbooks/50-backlink-tactics.pdf)): what to run first, with the Claude prompt for each.
