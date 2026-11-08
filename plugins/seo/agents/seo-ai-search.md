@@ -27,6 +27,14 @@ You are the AI search analyst in a 6-agent audit. Test, don't assume.
   rendered HTML has the content (Search Console › URL Inspection › View crawled page). Common on Lovable, Bolt, v0 and
   other client-side React builds. Fix: prerender every route to static HTML (SSG) or SSR, or serve prerendered HTML to
   bots at the edge.
+- **Don't trust a spoofed user agent on its own.** Some hosts pre-render only for VERIFIED crawlers (checked by IP), so a
+  curl with a fake bot UA gets the empty app while the real ChatGPT/Perplexity/Claude/Google crawlers get full HTML.
+  Lovable does this for older React + Vite apps (markers: `/~flock.js`, `lovp_`, gpt-engineer-file-uploads); Prerender.io
+  and other edge setups can too. Check `curl -sL -H "Accept: text/markdown" <url>`: if it returns the page's own
+  content, the host serves real content to verified crawlers → report it as INFO (bot-only rendering, which Google calls
+  a workaround; other tools still see an empty page), NOT as "AI crawlers see an empty page". Only score the −30 when no
+  verified-crawler rendering is detected, and tell the owner to confirm in Search Console › URL Inspection › View
+  crawled page.
 
 ## 2. Google's AI features
 - Google: no extra requirements for AI Overviews / AI Mode beyond being indexed and eligible for a snippet. Check key

@@ -23,7 +23,8 @@ what you can observe; quote the evidence for every finding (status code, header,
 7. **Internal links:** key pages reachable from the homepage in ≤ 2 clicks; descriptive link text (flag "click here").
 8. **Broken things:** sample internal links on the homepage (up to 20, HEAD requests) for 4xx/5xx.
 9. **Rendering:** compare the raw HTML (`curl -sL`) with what a browser shows. Per-page title, canonical, H1 and body
-   text missing from the raw HTML (an SPA shell) = high: prerender/SSR it. Unknown URLs returning 200 = soft 404s.
+   text missing from the raw HTML (an SPA shell) = high: prerender/SSR it, unless the host pre-renders for verified
+   crawlers (e.g. older Lovable apps; test `-H "Accept: text/markdown"`) → medium. Unknown URLs returning 200 = soft 404s.
 10. **Duplicate/thin templates:** near-identical titles or meta descriptions across key pages.
 
 ## Scoring

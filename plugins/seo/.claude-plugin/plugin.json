@@ -1,7 +1,7 @@
 {
   "name": "seo",
   "description": "SEO suite for Claude Code: /seo:audit runs 6 specialist agents in parallel (technical, content, AI search, schema, local, authority) → health score + the 5 fixes that matter most; /seo:fix writes them; every recommendation checked against Google's own docs; no API keys. Plus 15 skills: ranking principles, AI humanizer, backlink maxing, AI search visibility, local SEO pages, Reddit/LinkedIn/YouTube, recovery plans, publish with WordRocket.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": {
     "name": "WordRocket",
     "url": "https://wordrocket.ai"
