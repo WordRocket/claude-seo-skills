@@ -1,9 +1,26 @@
 {
   "name": "seo",
-  "description": "14 SEO skills for Claude: ranking principles (write and audit content the way Google judges it), the AI humanizer (your voice, no AI tells), the backlink maxing playbook, full SEO audit, local SEO pages, AI Overviews / AI Mode visibility, ranking on Reddit, LinkedIn and YouTube (borrowed authority), backlinks, unlinked brand mentions, core update recovery, image & video search, YouTube thumbnails (research + GPT Image 2 via kie.ai), and keyword-to-published-article with WordRocket.",
-  "version": "1.3.0",
-  "author": { "name": "WordRocket", "url": "https://wordrocket.ai" },
+  "description": "SEO suite for Claude Code: /seo:audit runs 6 specialist agents in parallel (technical, content, AI search, schema, local, authority) → health score + the 5 fixes that matter most; /seo:fix writes them; every recommendation checked against Google's own docs; no API keys. Plus 15 skills: ranking principles, AI humanizer, backlink maxing, AI search visibility, local SEO pages, Reddit/LinkedIn/YouTube, recovery plans, publish with WordRocket.",
+  "version": "2.0.0",
+  "author": {
+    "name": "WordRocket",
+    "url": "https://wordrocket.ai"
+  },
   "homepage": "https://wordrocket.ai",
   "license": "MIT",
-  "keywords": ["seo", "local-seo", "geo", "ai-overviews", "backlinks", "reddit-seo", "linkedin", "wordpress", "wordrocket"]
+  "keywords": [
+    "seo",
+    "local-seo",
+    "geo",
+    "ai-overviews",
+    "backlinks",
+    "reddit-seo",
+    "linkedin",
+    "wordpress",
+    "wordrocket",
+    "seo-audit",
+    "claude-code",
+    "ai-search",
+    "technical-seo"
+  ]
 }

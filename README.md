@@ -1,12 +1,39 @@
-# 14 free SEO skills for Claude
+# SEO suite for Claude Code (free) + 15 SEO skills
 
-Turn Claude into your SEO team. Each skill does the actual work with real data from the web (search results, your
-Search Console, Google Maps, free backlink tools) and gives you a client-ready report you can act on today.
+Turn Claude Code into your SEO team. One command audits your whole site with **6 specialist agents in parallel**,
+gives you a **health score and the 5 fixes that matter most** (with proof for each), and then **writes the fixes**.
+Every recommendation is checked against **Google's own documentation**, so it won't tell you to add llms.txt to rank
+in Google or to write 2,000 words. No API keys, no Python, no browser setup.
 
 Free, open source (MIT). Made by [WordRocket](https://wordrocket.ai).
 
+## Install (Claude Code, one minute)
+```bash
+claude plugin marketplace add WordRocket/claude-seo-skills
+claude plugin install seo@claude-seo-skills
+```
+Or inside Claude Code: `/plugin marketplace add WordRocket/claude-seo-skills`, then `/plugin install seo@claude-seo-skills`.
+
+## The commands
+| command | what it does |
+|---|---|
+| `/seo:audit <url>` | 6 agents at once (technical · content · AI search · schema · local · authority) → health score /100, the 5 fixes that matter most, a one-file HTML report, and a **myth check** (what it deliberately didn't recommend, with Google's words) |
+| `/seo:fix` | writes the fixes from the last audit into `seo-fixes/`: robots.txt for AI search crawlers, JSON-LD schema, titles + metas, answer-first intros, redirects, sitemap, the pages you're missing. Never touches your live site |
+| `/seo:ai <url>` | can ChatGPT search, Perplexity, Claude, Copilot and Google's AI features **reach and read** you? Tests real crawler access, firewall blocks and pages that are empty without JavaScript (common on Lovable, Bolt and v0 sites) |
+| `/seo:page2` | from your Search Console export: the pages Google almost ranks and the 3 edits that move each one up |
+| `/seo:write <keyword>` | top-5 teardown → brief → a page in your voice that adds what they don't have |
+| `/seo:local <business>` | Google Business Profile checklist + the service and town pages to build |
+| `/seo:links <domain>` | unlinked mentions, resource pages, best-of lists, Reddit/YouTube answers + outreach drafts (white-hat only) |
+| `/seo:check <report>` | paste any SEO report or advice: ✅ backed by Google · ⚠️ partly · ❌ myth · ❓ undocumented, with links |
+| `/seo:help` | the menu |
+
+In Claude.ai / Claude Desktop, upload `dist/seo-suite.zip` and say "seo audit yoursite.com": same checks, one after another.
+
+## Skills (also work on their own, in Claude.ai or Claude Code)
+
 | skill | ask Claude something like | you get |
 |---|---|---|
+| **seo-suite** ✨ new | "seo audit *[my site]*" · "seo fix" · "is my site ready for AI search?" | the engine behind the /seo commands: 6 checks, health score, top 5 fixes, the fix files, myth check |
 | **ranking-principles** ✨ new | "Use ranking principles to write a page about *[topic]*" · "Audit this page with ranking principles" | Claude stops copying SEO checklists and thinks like Google's own guidance: 12 principles (answer first, add what the top results don't have, first-hand proof, cite sources…) to write, brief or audit any page, with sources |
 | **ai-humanizer** ✨ new | "Learn my voice from these 3 emails" · "Humanize this" | your voice profile, drafts rewritten without the 2026 AI tells ("this matters", "rather than simply", reflex lists of three…), and a paste-ready prompt for ChatGPT custom instructions or Claude Instructions |
 | **backlink-maxing** | "Run the SEO backlink maxing playbook for *[my site]*" | the whole white-hat link job in one prompt: unlinked mentions → links, guest posts + resource pages + listicles, cited on Reddit/LinkedIn/YouTube, link-worthy articles (with WordRocket), every outreach draft |
