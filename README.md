@@ -1,4 +1,4 @@
-# SEO suite for Claude Code (free) + 15 SEO skills
+# SEO suite for Claude Code (free) + 17 SEO skills
 
 Turn Claude Code into your SEO team. One command audits your whole site with **6 specialist agents in parallel**,
 gives you a **health score and the 5 fixes that matter most** (with proof for each), and then **writes the fixes**.
@@ -33,6 +33,7 @@ In Claude.ai / Claude Desktop, upload `dist/seo-suite.zip` and say "seo audit yo
 
 | skill | ask Claude something like | you get |
 |---|---|---|
+| **dataforseo-seo-tool** ✨ new | "Do keyword research for *[keyword]* with DataForSEO" · "Where does *[my site]* rank for *[keyword]*?" · "Check my backlinks" | your own SEO tool on DataForSEO's pay-as-you-go API: keyword volume + difficulty, your position in Google's top 100, top competitors, a backlink summary and the 3 biggest gaps in one report, with each call's cost estimated first and reported after (our 4-call test: $0.067). Needs a DataForSEO account ($1 free credit to start) |
 | **seo-suite** ✨ new | "seo audit *[my site]*" · "seo fix" · "is my site ready for AI search?" | the engine behind the /seo commands: 6 checks, health score, top 5 fixes, the fix files, myth check |
 | **ranking-principles** ✨ new | "Use ranking principles to write a page about *[topic]*" · "Audit this page with ranking principles" | Claude stops copying SEO checklists and thinks like Google's own guidance: 12 principles (answer first, add what the top results don't have, first-hand proof, cite sources…) to write, brief or audit any page, with sources |
 | **ai-humanizer** ✨ new | "Learn my voice from these 3 emails" · "Humanize this" | your voice profile, drafts rewritten without the 2026 AI tells ("this matters", "rather than simply", reflex lists of three…), and a paste-ready prompt for ChatGPT custom instructions or Claude Instructions |
@@ -51,6 +52,8 @@ In Claude.ai / Claude Desktop, upload `dist/seo-suite.zip` and say "seo audit yo
 | **serp-to-published-article** | "Write and publish an article for *best crm for roofers*" | top-5 SERP teardown → brief → article written and published to WordPress (needs WordRocket) |
 
 ## Free playbooks
+[**Build your own SEO tool for under 7 cents**](playbooks/build-your-own-seo-tool.md) ([PDF](playbooks/build-your-own-seo-tool.pdf)) ✨ new: DataForSEO + Claude setup, the 4 prompts to paste (keywords, rank check, competitors, backlinks), what each one really cost on Nov 13, 2026, and the honest catches.
+
 [**The AI humanizer prompt**](playbooks/ai-humanizer-prompt.md) ✨ new: copy-paste it into ChatGPT (Settings › Personalization › Custom instructions) or Claude (Settings › Your Claude › Instructions). Full version + a short one for ChatGPT Free, every rule sourced.
 
 [**The 10-minute AI ranking setup**](playbooks/rank-in-ai-10-minutes.md) ([PDF](playbooks/rank-in-ai-10-minutes.pdf)): letting the AI search crawlers in, owning the exact question your buyer asks, and Google's Preferred Sources button (the two lines of code).
@@ -78,21 +81,37 @@ Then just ask, or call one directly: `/seo:seo-audit`, `/seo:local-seo-programma
 
 ### Claude.ai / Claude Desktop
 1. Download the skills you want from [`dist/`](dist/) (one zip per skill).
-2. In Claude: **Customize › Skills › + Create skill › Upload a skill** and pick the zip. (Older layouts: Settings › Capabilities › Skills.)
+2. In Claude: **Customize › Skills › + Add › Upload skill** and pick the zip. (Older layouts: Settings › Capabilities › Skills.)
 3. Make sure **Code execution and file creation** is on (Settings › Capabilities). The reports are built as files.
+
+### Use them in Gemini, ChatGPT and other assistants
+Each skill is a plain-language method in one `SKILL.md` file, so it also works outside Claude, where skills are
+available. Skills that lean on Claude in Chrome, a connector or a script can do less there.
+- **Gemini:** **Customize › Skills › Create › Upload** and pick the zip (for example `dist/ranking-principles.zip`).
+  Skills are on paid Gemini plans; availability varies by plan and country.
+- **ChatGPT:** **Plugins › Skills › Add › Upload from your computer** and pick the zip.
+- **Assistants without skills** (for example Grok): unzip it, attach the `SKILL.md` to the chat and say "follow this step
+  by step". Scripts won't run there, but the method still works.
+
+Menus move around: if yours looks different, look for **Skills** in the settings. If an app asks for a single file,
+unzip and upload the `SKILL.md`.
 
 ### Works best with
 - **Claude in Chrome**, so Claude can read pages that need a browser (Google Business Profiles, Search Console, free backlink checkers).
 - **Python 3** with `matplotlib` and `numpy` for the charts in the audit and recovery reports (`pip install matplotlib numpy`).
+- **The DataForSEO connector** for the dataforseo-seo-tool skill: Customize › Connectors › Add custom connector ›
+  `https://mcp.dataforseo.com/v3/mcp` (pay per request; DataForSEO's guide lists a Claude Pro plan).
 
 ## Want the fixes written for you?
 Every skill ends with a plan: pages to build, articles to write. Connect **WordRocket** and Claude can write those
 articles with research, images and FAQs, and publish them straight to your WordPress site.
 
-Claude › Settings › Connectors › **Add custom connector** › `https://wordrocketapi.com`, then sign in to
-[WordRocket](https://wordrocket.ai). The skills work without it; you just get the plan instead of the published pages.
+Claude › Customize › Connectors › **Add custom connector** › `https://wordrocketapi.com`, then sign in to
+[WordRocket](https://wordrocket.ai) (older layouts: Settings › Connectors). WordRocket is our own tool. The skills work
+without it; you just get the plan instead of the published pages.
 
 ## Notes
 - Every skill is told to use real data and never invent numbers. Still check anything you publish.
-- Not affiliated with Anthropic or Google.
+- Not affiliated with Anthropic, Google, OpenAI or DataForSEO. Prices quoted were checked on the date given; check the
+  provider's pricing page before you rely on them.
 - MIT licensed: use them for your own sites and your clients.

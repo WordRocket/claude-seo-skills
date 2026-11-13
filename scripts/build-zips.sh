@@ -1,5 +1,5 @@
 #!/bin/sh
-# Builds one .zip per skill into dist/ for uploading to claude.ai (Settings › Capabilities › Skills).
+# Builds one .zip per skill into dist/ for uploading to claude.ai (Customize › Skills › + Add › Upload skill).
 set -e
 cd "$(dirname "$0")/.."
 rm -rf dist && mkdir dist

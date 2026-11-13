@@ -1,0 +1,50 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Build your own SEO tool for under 7 cents (DataForSEO + Claude)</title><style>body{margin:0;background:#fff;font-family:Inter,-apple-system,Helvetica,Arial,sans-serif;color:#1d1d1f}
+.page{max-width:760px;margin:0 auto;padding:44px 40px}
+h1{font-size:32px;line-height:1.15;margin:0 0 12px;letter-spacing:-0.5px}
+h2{font-size:20px;margin:30px 0 10px}
+h3{font-size:16px;margin:22px 0 8px}
+p,li{font-size:14.5px;line-height:1.55;color:#333}
+ul,ol{padding-left:24px;margin:6px 0 12px}li{margin:0 0 6px}
+blockquote{margin:12px 0;padding:10px 14px;background:#f4f7ff;border-left:4px solid #3b82f6;border-radius:6px}
+blockquote p{margin:0;color:#1d1d1f}
+table{border-collapse:collapse;width:100%;margin:10px 0 14px;font-size:13px}
+th,td{border:1px solid #e3e3e3;padding:7px 8px;text-align:left;vertical-align:top;color:#333}
+th{background:#f6f6f7;font-weight:700;color:#1d1d1f}
+td:empty::after{content:"\00a0";display:inline-block;height:18px}
+code{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;background:#eef8f4;color:#0b6b52;border-radius:4px;padding:1px 5px}
+a{color:#2563eb;text-decoration:none}
+pre{background:#f4f4f5;border-radius:6px;padding:10px 12px;font-size:12px;line-height:1.45;white-space:pre-wrap;margin:8px 0 14px}
+pre code{background:none;color:#1d1d1f;padding:0}
+hr{border:none;border-top:1px solid #e5e5e5;margin:26px 0}
+.foot p{font-size:12px;color:#777}
+@page{size:Letter;margin:14mm}
+@media print{.page{padding:4px 34px}h2{margin:22px 0 8px}hr{margin:18px 0}}</style></head><body><div class="page"><h1>Build your own SEO tool for under 7 cents (DataForSEO + Claude)</h1>
+<p>Keyword research, a rank check, competitor research and a backlink check, run from a Claude chat on DataForSEO's pay-as-you-go API. On Nov 13, 2026 we ran all four for our own site and DataForSEO charged <b>$0.067</b> in total. No subscription: you pay per request. Below: the setup, the 4 prompts to paste, the real bill, and the honest catches. Prices checked Nov 13, 2026; check <a href="https://dataforseo.com/pricing">dataforseo.com/pricing</a> before you rely on them.</p>
+<h2>What you need</h2>
+<ul><li><b>A DataForSEO account.</b> New accounts get a <b>$1 free credit</b> for testing. After that, top-ups start at <b>$50</b> and the balance never expires. (<a href="https://dataforseo.com/help-center/how-does-your-free-unlimited-trial-work">Help Center</a>, <a href="https://dataforseo.com/pricing">pricing</a>)</li><li><b>Claude with custom connectors.</b> DataForSEO's setup guide lists a Claude Pro plan as the prerequisite.</li><li>Optional: the free <b>dataforseo-seo-tool</b> skill (it estimates every cost first and builds the report for you).</li><li>Optional: the <b>WordRocket</b> connector, to write the pages the report says you're missing (WordRocket is our own tool).</li></ul>
+<h2>Setup (5 minutes)</h2>
+<ol><li>Create your account at <a href="https://dataforseo.com">dataforseo.com</a>.</li><li>In Claude: <b>Customize › Connectors › Add custom connector</b>. Name: DataForSEO. URL: <code>https://mcp.dataforseo.com/v3/mcp</code>. Add it, then approve the authorization screen (you sign in to DataForSEO; no API key goes into Claude). (<a href="https://dataforseo.com/model-context-protocol">DataForSEO's guide</a>)</li><li>Optional: add the skill: <b>Customize › Skills › + Add › Upload skill</b> and pick <code>dataforseo-seo-tool.zip</code> from the free repo's <code>dist/</code> folder.</li><li>Open a new chat, make sure the DataForSEO connector is on, and paste prompt 1.</li></ol>
+<p><b>No connector?</b> Sign in at app.dataforseo.com, open <b>API Playground</b>, pick the endpoint, paste the request (the free skill writes it for you), press Send. Every response shows its <code>cost</code>. Paste the response into Claude and ask for the report. Never paste your API password into a chat.</p>
+<table><tr><th>job</th><th>endpoint</th></tr><tr><td>Keyword research</td><td><code>dataforseo_labs/google/keyword_suggestions/live</code></td></tr><tr><td>Rank tracking</td><td><code>serp/google/organic/live/advanced</code></td></tr><tr><td>Competitors</td><td><code>dataforseo_labs/google/competitors_domain/live</code></td></tr><tr><td>Backlinks</td><td><code>backlinks/summary/live</code></td></tr></table>
+<h2>The 4 prompts</h2>
+<p>Swap the [brackets] for your own keyword, site and country.</p>
+<p><b>1. Keyword research</b></p>
+<pre><code>Use DataForSEO (Labs keyword suggestions, live) for the seed keyword &quot;[ai blog writer]&quot;, location [United States], language English. Limit 20, sorted by search volume. Tell me the estimated cost before you call it. Show a table: keyword, monthly search volume, keyword difficulty. Mark the 5 best targets for [my site and what it sells]. Then tell me the actual cost from the response. Don&#x27;t invent any numbers.</code></pre>
+<p><b>2. Rank tracking</b></p>
+<pre><code>Use DataForSEO (Google organic SERP, live advanced) for &quot;[ai blog writer]&quot;, [United States], English, desktop, depth 100. Estimate the cost first. Tell me where [mysite.com] ranks (position and URL) or say it&#x27;s not in the top 100, list the top 10 domains and the SERP features (AI Overview, People Also Ask, local pack). Then the actual cost.</code></pre>
+<p><b>3. Competitors</b></p>
+<pre><code>Use DataForSEO (Labs competitors domain, live) for [mysite.com], [United States], English, exclude top domains, limit 10, sorted by shared keywords. Estimate the cost first. Table: domain, shared keywords, and whether each one looks like a real competitor. Then the actual cost.</code></pre>
+<p><b>4. Backlinks</b></p>
+<pre><code>Use DataForSEO (Backlinks summary, live) for [mysite.com], including subdomains, live links only. Estimate the cost first. Give me backlinks, referring domains, rank, spam score and first seen, in plain words. Then the actual cost.</code></pre>
+<p><b>Then put it together</b></p>
+<pre><code>Put the four results into one report: keywords, where I rank, top competitors, backlink summary, and the 3 biggest gaps (each with the number behind it and the page or fix that closes it). Add a table of what each call cost. Only use numbers from the responses above.</code></pre>
+<h2>What it really cost (Nov 13, 2026)</h2>
+<p>Four requests from our own account, for our own site and the keyword "ai blog writer" (US, English). The cost is the <code>cost</code> field DataForSEO returned.</p>
+<table><tr><th>job</th><th>what came back</th><th>cost</th></tr><tr><td>Keyword research</td><td>20 of 61 ideas with volume and difficulty (top one: 260 searches a month, difficulty 27)</td><td>$0.0144</td></tr><tr><td>Rank tracking</td><td>Google's top 100 (US, desktop): 99 organic results plus an AI Overview. Our site wasn't in it</td><td>$0.0155</td></tr><tr><td>Competitors</td><td>829 competing domains, top 10 returned</td><td>$0.0132</td></tr><tr><td>Backlinks</td><td>1,248 backlinks from 333 referring domains</td><td>$0.024</td></tr><tr><td><b>Total</b></td><td></td><td><b>$0.067</b></td></tr></table>
+<p><b>The price list behind it:</b> DataForSEO Labs $0.012 per task + $0.00012 per result (<a href="https://dataforseo.com/pricing/dataforseo-labs/dataforseo-google-api">pricing</a>) · Google organic SERP, live mode, $0.002 per 10 results; our depth-100 call was billed $0.0155 (<a href="https://dataforseo.com/pricing/google-serp/google-organic-serp-api">pricing</a>) · Backlinks $0.024 per task + $0.000036 per row (<a href="https://dataforseo.com/pricing/backlinks/backlinks">pricing</a>), with no monthly minimum since Jul 1, 2026, when the $100/mo commitment was removed (<a href="https://dataforseo.com/update/pricing-update-in-dataforseo-apis">update</a>).</p>
+<h2>The honest notes</h2>
+<ul><li><b>The free dollar covers this test about 14 times</b> ($0.067 each). After that, the smallest top-up is $50 (it never expires).</li><li><b>Not like-for-like with Semrush or Ahrefs.</b> Semrush's SEO plan is $139/mo and Ahrefs Lite is $129/mo (list prices, billed monthly, checked Nov 13, 2026). They include dashboards, history, site audits and tracking projects. Here you get raw data on demand and Claude builds the view.</li><li><b>Costs grow with limits.</b> 20 keyword ideas cost $0.0144; 1,000 cost about $0.13. Twenty rank checks at depth 100 cost about $0.31. Ask Claude for the estimate first (the free skill does it automatically and asks before anything over $0.25).</li><li><b>It's DataForSEO's data.</b> Search volumes are monthly estimates; a ranking is one check at one place and time, and it changes day to day.</li><li><b>Never let a chat top up or change billing.</b> Do that yourself in your DataForSEO account.</li></ul>
+<h2>Then write the gap pages</h2>
+<p>Our run found our own site missing from Google's top 100 for the keyword it should own: that's the next page. Brief each gap with the free <b>ranking-principles</b> skill, then write it yourself, with any writer, or with <b>WordRocket</b> (our own tool, connector <code>https://wordrocketapi.com</code>). Re-run the rank check monthly.</p>
+<hr><div class="foot">
+<p>17 free SEO skills: <a href="https://github.com/WordRocket/claude-seo-skills">github.com/WordRocket/claude-seo-skills</a> · Sources: <a href="https://dataforseo.com/pricing">DataForSEO pricing</a> · <a href="https://dataforseo.com/model-context-protocol">MCP connector</a> · <a href="https://dataforseo.com/help-center/connecting-the-remote-dataforseo-mcp-server-using-oauth">Remote MCP with OAuth</a> · <a href="https://www.semrush.com/pricing/seo-ai-search/">Semrush pricing</a> · <a href="https://ahrefs.com/pricing">Ahrefs pricing</a>. Made by WordRocket (wordrocket.ai), our own tool. Not affiliated with DataForSEO. Results vary.</p></div></div></body></html>
