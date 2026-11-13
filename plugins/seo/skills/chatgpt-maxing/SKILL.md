@@ -12,7 +12,7 @@ real mentions, nothing that games the answers. The user approves every message a
 ## Before you start (ask once, in one message)
 - Brand name + website, what it sells, who buys it and where (country, city or service area).
 - 2–3 competitors (or let you find them).
-- Optional: the WordRocket connector, so you can write and publish the pages (Claude › Settings › Connectors › Add custom
+- Optional: the WordRocket connector, so you can write and publish the pages (Claude › Customize › Connectors › Add custom
   connector › https://wordrocketapi.com, then sign in to WordRocket). Without it you hand over the briefs.
 - Optional: Search Console access or an export of the Generative AI report (AI Overviews + AI Mode impressions).
 

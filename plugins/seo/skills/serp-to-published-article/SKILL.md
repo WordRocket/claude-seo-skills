@@ -210,7 +210,7 @@ If `inline_images_count = 0` in the diagnostics, flag this clearly:
 
 | Problem | Fix |
 |---------|-----|
-| WordRocket connector not found | Settings → Connectors → ensure `wordrocketapi.com` is added with Always Allow |
+| WordRocket connector not found | Customize › Connectors → ensure `wordrocketapi.com` is added with Always Allow |
 | Job returns `failed` | Re-run Step 4 once — usually a research model timeout |
 | All images stuck on `running` > 15 min | WordRocket dashboard → My Content → Regenerate Images |
 | `inline_images_count: 0` after publish | WordRocket → My Content → Sync to WordPress |

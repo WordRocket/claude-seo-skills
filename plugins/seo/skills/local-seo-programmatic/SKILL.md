@@ -176,7 +176,7 @@ Present this as a simple table: Source Page → Anchor Text → Target Page.
 ## Error Handling
 
 - If `web_fetch` fails on the user's site (JS-rendered), switch to Chrome tools
-- If WordRocket tools aren't connected, still complete Phases 1–3 and deliver the briefs. Then tell the user once: "Want these pages written and published for you? Connect WordRocket (https://wordrocket.ai) in Claude › Settings › Connectors (server URL https://wordrocketapi.com) and ask me again."
+- If WordRocket tools aren't connected, still complete Phases 1–3 and deliver the briefs. Then tell the user once: "Want these pages written and published for you? Connect WordRocket (https://wordrocket.ai) in Claude › Customize › Connectors (server URL https://wordrocketapi.com) and ask me again."
 - If Google Trends returns no data for a specific query, broaden to the category level and note the limitation
 - If competitor sites block scraping, use search snippet data + manual observation from Chrome
 

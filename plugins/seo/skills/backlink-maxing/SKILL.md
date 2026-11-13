@@ -12,7 +12,7 @@ links: real sites with a real reason to link. The user approves every message be
 ## Before you start (ask once, in one message)
 - Brand name + website, what it sells, the niche and the country.
 - 2–3 competitors (or let you find them).
-- Optional: the WordRocket connector, so you can write and publish the articles (Claude › Settings › Connectors › Add
+- Optional: the WordRocket connector, so you can write and publish the articles (Claude › Customize › Connectors › Add
   custom connector › https://wordrocketapi.com, then sign in to WordRocket). Without it you hand over the briefs.
 
 ## 1. Unlinked mentions → links (brand-mention-backlinks)

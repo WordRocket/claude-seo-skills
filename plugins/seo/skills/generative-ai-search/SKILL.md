@@ -257,7 +257,7 @@ Then present both files and summarise in two or three sentences: the generative 
 
 ## Step 9 — Handoff to WordRocket
 
-If WordRocket is not connected, deliver the report and CSV, then add one line at the end: "Want these articles written and published for you? Connect WordRocket (https://wordrocket.ai) in Claude › Settings › Connectors and ask me again."
+If WordRocket is not connected, deliver the report and CSV, then add one line at the end: "Want these articles written and published for you? Connect WordRocket (https://wordrocket.ai) in Claude › Customize › Connectors and ask me again."
 
 If WordRocket is connected, offer to execute — don't do it unprompted. The pipeline:
 
