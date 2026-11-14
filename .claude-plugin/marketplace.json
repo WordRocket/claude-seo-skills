@@ -6,13 +6,13 @@
   },
   "metadata": {
     "description": "Free SEO skills for Claude, by WordRocket",
-    "version": "2.1.0"
+    "version": "2.2.0"
   },
   "plugins": [
     {
       "name": "seo",
       "source": "./plugins/seo",
-      "description": "SEO suite: /seo:audit (6 agents in parallel → health score + top 5 fixes), /seo:fix, /seo:ai, /seo:page2, /seo:write, /seo:local, /seo:links, /seo:check — checked against Google's docs, no API keys. Plus 17 SEO skills, incl. your own SEO tool on DataForSEO."
+      "description": "SEO suite: /seo:audit (6 agents in parallel → health score + top 5 fixes), /seo:fix, /seo:ai, /seo:page2, /seo:write, /seo:local, /seo:links, /seo:check — checked against Google's docs, no API keys. Plus 18 SEO skills, incl. keyword maxing (free keyword research with fan-out) and your own SEO tool on DataForSEO."
     }
   ]
 }

@@ -1,4 +1,4 @@
-# SEO suite for Claude Code (free) + 17 SEO skills
+# SEO suite for Claude Code (free) + 18 SEO skills
 
 Turn Claude Code into your SEO team. One command audits your whole site with **6 specialist agents in parallel**,
 gives you a **health score and the 5 fixes that matter most** (with proof for each), and then **writes the fixes**.
@@ -33,7 +33,8 @@ In Claude.ai / Claude Desktop, upload `dist/seo-suite.zip` and say "seo audit yo
 
 | skill | ask Claude something like | you get |
 |---|---|---|
-| **dataforseo-seo-tool** ✨ new | "Do keyword research for *[keyword]* with DataForSEO" · "Where does *[my site]* rank for *[keyword]*?" · "Check my backlinks" | your own SEO tool on DataForSEO's pay-as-you-go API: keyword volume + difficulty, your position in Google's top 100, top competitors, a backlink summary and the 3 biggest gaps in one report, with each call's cost estimated first and reported after (our 4-call test: $0.067). Needs a DataForSEO account ($1 free credit to start) |
+| **keyword-maxing** ✨ new | "Run the keyword maxing playbook for *[my site]*" · "Find keywords for *[topic]*" · "Build me a topical map" | free keyword research for Google and AI search: your real competitors and what they cover, every topic fanned out into the sub-questions behind it (Google autocomplete, People also search for, ChatGPT / Gemini / AI Mode answers, Reddit, Quora, competitor pages, each with its source), a topical map (pillar + spokes), priorities by intent, gaps and a free difficulty proxy, then a CSV + 5 page briefs. Volumes only from a real source (DataForSEO, Keyword Planner, Search Console) |
+| **dataforseo-seo-tool** | "Do keyword research for *[keyword]* with DataForSEO" · "Where does *[my site]* rank for *[keyword]*?" · "Check my backlinks" | your own SEO tool on DataForSEO's pay-as-you-go API: keyword volume + difficulty, your position in Google's top 100, top competitors, a backlink summary and the 3 biggest gaps in one report, with each call's cost estimated first and reported after (our 4-call test: $0.067). Needs a DataForSEO account ($1 free credit to start) |
 | **seo-suite** ✨ new | "seo audit *[my site]*" · "seo fix" · "is my site ready for AI search?" | the engine behind the /seo commands: 6 checks, health score, top 5 fixes, the fix files, myth check |
 | **ranking-principles** ✨ new | "Use ranking principles to write a page about *[topic]*" · "Audit this page with ranking principles" | Claude stops copying SEO checklists and thinks like Google's own guidance: 12 principles (answer first, add what the top results don't have, first-hand proof, cite sources…) to write, brief or audit any page, with sources |
 | **ai-humanizer** ✨ new | "Learn my voice from these 3 emails" · "Humanize this" | your voice profile, drafts rewritten without the 2026 AI tells ("this matters", "rather than simply", reflex lists of three…), and a paste-ready prompt for ChatGPT custom instructions or Claude Instructions |
@@ -52,7 +53,9 @@ In Claude.ai / Claude Desktop, upload `dist/seo-suite.zip` and say "seo audit yo
 | **serp-to-published-article** | "Write and publish an article for *best crm for roofers*" | top-5 SERP teardown → brief → article written and published to WordPress (needs WordRocket) |
 
 ## Free playbooks
-[**Build your own SEO tool for under 7 cents**](playbooks/build-your-own-seo-tool.md) ([PDF](playbooks/build-your-own-seo-tool.pdf)) ✨ new: DataForSEO + Claude setup, the 4 prompts to paste (keywords, rank check, competitors, backlinks), what each one really cost on Nov 13, 2026, and the honest catches.
+[**SEO keyword maxing**](playbooks/keyword-maxing.md) ([PDF](playbooks/keyword-maxing.pdf)) ✨ new: free keyword research with Claude, the one prompt, the fan-out sources (Google autocomplete, People also search for, AI Mode / ChatGPT / Gemini answers, Reddit, Quora), the topical map, where real search volumes come from (and their catches), and our real run on our own site.
+
+[**Build your own SEO tool for under 7 cents**](playbooks/build-your-own-seo-tool.md) ([PDF](playbooks/build-your-own-seo-tool.pdf)): DataForSEO + Claude setup, the 4 prompts to paste (keywords, rank check, competitors, backlinks), what each one really cost on Nov 13, 2026, and the honest catches.
 
 [**The AI humanizer prompt**](playbooks/ai-humanizer-prompt.md) ✨ new: copy-paste it into ChatGPT (Settings › Personalization › Custom instructions) or Claude (Settings › Your Claude › Instructions). Full version + a short one for ChatGPT Free, every rule sourced.
 
